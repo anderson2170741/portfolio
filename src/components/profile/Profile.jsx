@@ -4,7 +4,7 @@ import imagen from "../../assets/image/anderson-transp.png";
 import PropTypes from "prop-types";
 import { FaLinkedinIn, FaWhatsapp, FaDiscord, FaGithub } from "react-icons/fa";
 import { HiMailOpen } from "react-icons/hi";
-import "../../app.css";
+import "../../App.css";
 
 const Profile = ({ onItemClick }) => {
   const handleContactClick = () => {
