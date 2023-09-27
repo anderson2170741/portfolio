@@ -69,7 +69,7 @@ const App = () => {
             </div>
           )}
         </div>
-        <div className="columnNavbar grid content-center fixed inset-x-0 bottom-0 xl:relative lg:px-24 xl:px-0">
+        <div className="columnNavbar grid content-center fixed inset-x-0 bottom-5 xl:relative lg:px-24 xl:px-0">
           {isLoading ? (
             <SkeletonMenu onItemClick={handleItemClick} activeSection={activeSection} /> // Pasar onItemClick a SkeletonMenu
           ) : (

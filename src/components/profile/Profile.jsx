@@ -12,9 +12,9 @@ const Profile = ({ onItemClick }) => {
   };
   return (
     <div className="Profile p-8 rounded-3xl xl:border-2 text-grey">
-      <h1 className="mb-8 font-bold text-base sm:text-lg xl:text-xl text-white">
+      <p className="mb-8 font-bold text-base sm:text-lg xl:text-xl text-white">
         <span className="text-yellow">Anderson </span>Durán
-      </h1>
+      </p>
       <div className="ProfileBox grid justify-items-center">
         <div className="w-60 h-44  mt-16 sm:w-64 sm:h-52 sm:mt-24 rounded-3xl z-0 bg-white-rgba"></div>
         <img className="w-52 h-38 mt-[-265px] sm:w-max sm:h-max z-10 sm:mt-[-309px]" src={imagen} alt="Imagen" />

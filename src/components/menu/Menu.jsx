@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { AiFillHome } from "react-icons/ai";
 import { FaFileCode, FaBriefcase, FaMobile } from "react-icons/fa";
@@ -8,6 +8,33 @@ import "../../App.css";
 import cv from "../../assets/pdf/CV.pdf";
 
 const Menu = ({ onItemClick, activeSection }) => {
+  const [isMenuHidden, setIsMenuHidden] = useState(false);
+
+  useEffect(() => {
+    let prevScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > prevScrollY) {
+        // El usuario está haciendo scroll hacia abajo
+        setIsMenuHidden(true);
+      } else {
+        // El usuario está haciendo scroll hacia arriba
+        setIsMenuHidden(false);
+      }
+
+      prevScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // Limpia el event listener cuando el componente se desmonta
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const menuItems = [
     { id: "home", icon: <AiFillHome className="text-2xl  md:text-4xl" /> },
     { id: "skills", icon: <FaFileCode className="text-2xl  md:text-4xl" /> },
@@ -17,7 +44,12 @@ const Menu = ({ onItemClick, activeSection }) => {
   ];
 
   return (
-    <div className="rounded-3xl border-2 text-grey bg-black flex xl:flex-col mx-auto lg:ml-auto lg:mr-auto">
+    <div
+      className={`rounded-3xl border-2 text-grey bg-black flex xl:flex-col mx-auto lg:ml-auto lg:mr-auto ${
+        isMenuHidden ? "hidden" : ""
+      }`}
+    >
+      {/* Contenido del menú */}
       {menuItems.map((item) => (
         <div
           key={item.id}
@@ -57,4 +89,3 @@ Menu.propTypes = {
 };
 
 export default Menu;
-
