@@ -20,7 +20,7 @@ const Home = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
         <div className="p-3 sm:p-10 xl:p-8 rounded-3xl bg-yellow shadow-lg shadow-yellow/50 text-center">
           <p className="text-black font-extrabold text-3xl sm:text-4xl xl:text-5xl">
-            +180
+            +280
           </p>
           <h2 className="text-white font-extrabold text-base sm:text-lg xl:text-xl mt-4">
             Horas de práctica
@@ -28,7 +28,7 @@ const Home = () => {
         </div>
         <div className="p-3 sm:p-10 xl:p-8 rounded-3xl bg-yellow shadow-lg shadow-yellow/50 text-center">
           <p className="text-black font-extrabold text-3xl sm:text-4xl xl:text-5xlv">
-            +100
+            +200
           </p>
           <h2 className="text-white font-extrabold text-base sm:text-lg xl:text-xl mt-4">
             Horas de teoría
