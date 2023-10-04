@@ -17,7 +17,7 @@ const ProjectCarousel = () => {
         {/* Rick and Morty */}
         <div className="">
           <h2 className="pb-4 font-bold text-xl sm:text-2xl xl:text-3xl text-yellow text-center">
-            Pokédex
+            Rick and Morty
           </h2>
           <div className="flex flex-col md:flex-row sm:mx-14 sm:my-8 md:mx-8 md:my-8">
             <a
@@ -26,7 +26,7 @@ const ProjectCarousel = () => {
               rel="noopener noreferrer"
             >
               <div className="w-60 h-60 sm:w-80 sm:h-80  hover:skew-y-12  mx-auto md:mx-0 ">
-                <img className="rounded-2xl" src={RickandMorty} alt="pokedex" />
+                <img className="rounded-2xl" src={RickandMorty} alt="rick and morty" />
               </div>
             </a>
 
