@@ -42,12 +42,12 @@ const ContactForm = () => {
   return (
     <div className="flex items-center justify-center">
       <form ref={form} onSubmit={sendEmail} className="w-full sm:w-5/6 sm:px-8">
-        <input type="text" placeholder="Nombre" name="user_name" value={nombre} onChange={(e) => setNombre(e.target.value)} className="w-full rounded-xl border-2 py-2 px-3 mb-8 bg-black text-grey" required />
-        <input type="text" placeholder="Empresa" name="company_name" value={empresa} onChange={(e) => setEmpresa(e.target.value)} className="w-full rounded-xl border-2 py-2 px-3 mb-8 bg-black text-grey" />
-        <input type="email" placeholder="Email" name="user_email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border-2 py-2 px-3 mb-8 bg-black text-grey" required />
-        <textarea name="message" placeholder="Mensaje" value={mensaje} onChange={(e) => setMensaje(e.target.value)} className="w-full h-44 rounded-xl border-2 py-2 px-3 mb-8 bg-black text-grey" required></textarea>
+        <input type="text" placeholder="Nombre" name="user_name" value={nombre} onChange={(e) => setNombre(e.target.value)} className="w-full rounded-xl border-2 py-2 px-3 mb-8 bg-veryDark text-grey" required />
+        <input type="text" placeholder="Empresa" name="company_name" value={empresa} onChange={(e) => setEmpresa(e.target.value)} className="w-full rounded-xl border-2 py-2 px-3 mb-8 bg-veryDark text-grey" />
+        <input type="email" placeholder="Email" name="user_email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-xl border-2 py-2 px-3 mb-8 bg-veryDark text-grey" required />
+        <textarea name="message" placeholder="Mensaje" value={mensaje} onChange={(e) => setMensaje(e.target.value)} className="w-full h-44 rounded-xl border-2 py-2 px-3 mb-8 bg-veryDark text-grey" required></textarea>
         {error && <p className="text-red-500">{error}</p>}
-        <button className=" hover:scale-110 duration-300 w-52 h-10 sm:w-60 sm:h-12 xl:w-64 xl:h-14 bg-yellow shadow-lg shadow-yellow/50 text-black font-extrabold md:text-lg xl:text-xl rounded-2xl flex justify-center items-center " type="submit">
+        <button className=" hover:scale-110 duration-300 w-52 h-10 sm:w-60 sm:h-12 xl:w-64 xl:h-14 bg-orange shadow-lg shadow-orange/50 text-veryDark font-extrabold md:text-lg xl:text-xl rounded-2xl flex justify-center items-center " type="submit">
           <FaPaperPlane className='mr-2'/>Enviar      
         </button>
       </form>

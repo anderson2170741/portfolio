@@ -13,13 +13,13 @@ const Profile = ({ onItemClick }) => {
   return (
     <div className="Profile p-8 rounded-3xl xl:border-2 text-grey">
       <p className="mb-8 font-bold text-base sm:text-lg xl:text-xl text-white">
-        <span className="text-yellow">Anderson </span>Durán
+        <span className="text-orange">Anderson </span>Durán
       </p>
       <div className="ProfileBox grid justify-items-center">
         <div className="w-60 h-44  mt-16 sm:w-64 sm:h-52 sm:mt-24 rounded-3xl z-0 bg-white-rgba"></div>
         <img className="w-52 h-38 mt-[-265px] sm:w-max sm:h-max z-10 sm:mt-[-309px]" src={imagen} alt="Imagen" />
 
-        <h1 className="font-bold text-lg sm:text-xl xl:text-2xl text-yellow ">
+        <h1 className="font-bold text-lg sm:text-xl xl:text-2xl text-orange ">
           Full Stack Developer
         </h1>
         <h2 className="font-bold text-base sm:text-lg xl:text-xl text-white">Frontend</h2>
@@ -30,13 +30,13 @@ const Profile = ({ onItemClick }) => {
             rel="noopener noreferrer"
             className="hover:scale-110 duration-300 boxIcons grid place-items-center w-10 h-10 sm:w-12 sm:h-12 xl:w-14 xl:h-14 cursor-pointer bg-grey rounded-xl"
           >
-            <FaLinkedinIn className="hover:text-blue w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 text-black" />
+            <FaLinkedinIn className="hover:text-blue w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 text-veryDark" />
           </a>
           <a
             href="mailto:andersonduranpc@gmail.com"
             className="hover:scale-110 duration-300 boxIcons grid place-items-center w-10 h-10 sm:w-12 sm:h-12 xl:w-14 xl:h-14 cursor-pointer bg-grey rounded-xl"
           >
-            <HiMailOpen className="hover:text-white w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 text-black" />
+            <HiMailOpen className="hover:text-white w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 text-veryDark" />
           </a>
           <a
             href="https://wa.me/18296535179"
@@ -44,7 +44,7 @@ const Profile = ({ onItemClick }) => {
             rel="noopener noreferrer"
             className=" hover:scale-110 duration-300 boxIcons grid place-items-center w-10 h-10 sm:w-12 sm:h-12 xl:w-14 xl:h-14 cursor-pointer bg-grey rounded-xl"
           >
-            <FaWhatsapp className="hover:text-green w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 text-black" />
+            <FaWhatsapp className="hover:text-green w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 text-veryDark" />
           </a>
           <a
             href="https://discord.com/users/993957118652715091"
@@ -52,10 +52,10 @@ const Profile = ({ onItemClick }) => {
             rel="noopener noreferrer"
             className="hover:scale-110 duration-300 boxIcons grid place-items-center w-10 h-10 sm:w-12 sm:h-12 xl:w-14 xl:h-14 cursor-pointer bg-grey rounded-xl"
           >
-            <FaDiscord className="hover:text-purple w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 text-black" />
+            <FaDiscord className="hover:text-purple w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 text-veryDark" />
           </a>
         </div>
-        <button className="hover:scale-110 duration-300 w-52 h-10 sm:w-60 sm:h-12 xl:w-64 xl:h-14 bg-yellow shadow-lg shadow-yellow/50 text-black font-extrabold sm:text-lg xl:text-xl rounded-2xl " onClick={handleContactClick}>
+        <button className="hover:scale-110 duration-300 w-52 h-10 sm:w-60 sm:h-12 xl:w-64 xl:h-14 bg-orange shadow-lg shadow-orange/50 text-veryDark font-extrabold sm:text-lg xl:text-xl rounded-2xl " onClick={handleContactClick}>
           Contáctame
         </button>
       </div>
@@ -64,7 +64,7 @@ const Profile = ({ onItemClick }) => {
 };
 
 Profile.propTypes = {
-  onItemClick: PropTypes.func.isRequired, // onItemClick debe ser una función requerida
+  onItemClick: PropTypes.func.isRequired,
 };
 
 export default Profile;

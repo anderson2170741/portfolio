@@ -7,11 +7,11 @@ export default {
   theme: {
     extend: {
       colors:{
-        'black': '#000000',
+        'veryDark': '#04041c',
         'grey': '#ABABAB',
         'white': '#FFFFFF',
         'white-rgba': 'rgba(171, 171, 171, 0.1)',
-        'yellow': '#FBBC04',
+        'orange': '#FF570A',
         'custom-grey': '#ABABAB',
         'link': '#0060FF',
         'purple': '#5865F2',
