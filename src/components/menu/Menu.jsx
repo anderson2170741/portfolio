@@ -5,7 +5,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FaFileCode, FaBriefcase, FaMobile } from "react-icons/fa";
 import { PiCertificateFill } from "react-icons/pi";
 import "../../App.css";
-import cv from "../../assets/pdf/CV_editado-comprimido.pdf";
+import cv from "../../assets/pdf/CV_Anderson_Dura.pdf";
 
 const Menu = ({ onItemClick, activeSection }) => {
   const [isMenuHidden, setIsMenuHidden] = useState(false);

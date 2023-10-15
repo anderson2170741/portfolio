@@ -17,7 +17,7 @@ const Skills = () => {
             <li className="m-4">HTML</li>
             <li className="m-4">CSS</li>
             <li className="m-4">React</li>
-            <li className="m-4">Tailwind</li>
+            <li className="m-4">Tailwind CSS</li>
             <li className="m-4">Bootstrap</li>
           </ul>
         </div>

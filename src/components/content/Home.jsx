@@ -10,7 +10,7 @@ const Home = ({ onItemClick }) => {
 
   return (
     <div className="pt-12 sm:pt-16 px-2 sm:px-8">
-      <div className="w-auto h-24 ">
+      <div className="w-auto">
         <h1 className=" typing-text font-bold text-3xl sm:text-4xl xl:text-5xl text-white">
           ¡Hola!, Soy <span className=" text-orange">Anderson Durán</span>  
         </h1>
