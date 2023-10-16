@@ -49,7 +49,7 @@ const Menu = ({ onItemClick, activeSection, darkMode, toggleTheme }) => {
 
   return (
     <div
-      className={`rounded-3xl border-2 text-grey ${
+      className={`rounded-2xl sm:rounded-3xl border-2 text-grey ${
         darkMode ? "bg-veryDark" : "bg-white"
       } flex xl:flex-col mx-auto lg:ml-auto lg:mr-auto ${
         isMenuHidden ? "hidden" : ""
