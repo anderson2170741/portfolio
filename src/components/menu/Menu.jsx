@@ -35,11 +35,11 @@ const Menu = ({ onItemClick, activeSection, darkMode, toggleTheme }) => {
   }, []);
 
   const menuItems = [
-    { id: "home", icon: <AiFillHome className="text-2xl md:text-4xl" /> },
-    { id: "skills", icon: <FaFileCode className="text-2xl md:text-4xl" /> },
-    { id: "projects", icon: <FaBriefcase className="text-2xl md:text-4xl" /> },
-    { id: "qualities", icon: <PiCertificateFill className="text-2xl md:text-4xl" /> },
-    { id: "contact", icon: <FaMobile className="text-2xl md:text-4xl" /> },
+    { id: "home", icon: <AiFillHome className="text-2xl md:text-3xl lg:text-4xl" /> },
+    { id: "skills", icon: <FaFileCode className="text-2xl md:text-3xl lg:text-4xl" /> },
+    { id: "projects", icon: <FaBriefcase className="text-2xl md:text-3xl lg:text-4xl" /> },
+    { id: "qualities", icon: <PiCertificateFill className="text-2xl md:text-3xl lg:text-4xl" /> },
+    { id: "contact", icon: <FaMobile className="text-2xl md:text-3xl lg:text-4xl" /> },
   ];
 
   const handleIconClick = (itemId) => {
@@ -80,7 +80,7 @@ const Menu = ({ onItemClick, activeSection, darkMode, toggleTheme }) => {
         </div>
       ))}
       <button
-        className={`w-11 h-11 sm:w-16 sm:h-16 md:w-20 md:h-20 font-bold text-2xl md:text-3xl grid place-items-center cursor-pointer hover:scale-125 duration-300 ${
+        className={`w-11 h-11 sm:w-16 sm:h-16 md:w-20 md:h-20 font-bold text-2xl md:text-3xl lg:text-4xl grid place-items-center cursor-pointer hover:scale-125 duration-300 ${
           activeIcon === "theme" ? "text-orange scale-125 duration-300" : ""
         } ${darkMode ? 'text-grey' : ' text-grey'}`}
         onClick={() => {
@@ -88,7 +88,7 @@ const Menu = ({ onItemClick, activeSection, darkMode, toggleTheme }) => {
           toggleTheme();
         }}
       >
-        {darkMode ? <MdLightMode  className="text-2xl md:text-4xl" /> : <MdNightlight className="text-2xl md:text-4xl" />}
+        {darkMode ? <MdLightMode  className="text-2xl md:text-3xl lg:text-4xl" /> : <MdNightlight className="text-2xl md:text-3xl lg:text-4xl" />}
       </button>
       <a
         href={cv}

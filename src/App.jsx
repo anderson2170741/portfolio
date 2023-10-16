@@ -75,7 +75,7 @@ const App = () => {
             </div>
           )}
         </div>
-        <div className="columnNavbar grid content-center fixed inset-x-0 bottom-5 xl:relative lg:px-24 xl:px-0">
+        <div className="columnNavbar grid content-center fixed inset-x-0 bottom-5 xl:relative lg:px-24 xl:px-0 z-30">
           {isLoading ? (
             <SkeletonMenu
               onItemClick={handleItemClick}
