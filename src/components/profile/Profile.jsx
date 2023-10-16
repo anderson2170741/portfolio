@@ -6,15 +6,16 @@ import { FaLinkedinIn, FaWhatsapp, FaDiscord, FaGithub } from "react-icons/fa";
 import { HiMailOpen } from "react-icons/hi";
 import "../../App.css";
 
-const Profile = ({ onItemClick }) => {
+const Profile = ({ onItemClick, darkMode}) => {
   const handleContactClick = () => {
     onItemClick("contact");
   };
   return (
-    <div className="Profile p-8 rounded-3xl xl:border-2 text-grey">
-      <p className="mb-8 font-bold text-base sm:text-lg xl:text-xl text-white">
+    <div className="Profile p-8 rounded-3xl xl:border-2 border-grey">
+      <div><p className={`mb-8 font-bold text-base sm:text-lg xl:text-xl ${darkMode ? 'text-white' : 'text-veryDark'}`}>
         <span className="text-orange">Anderson </span>Durán
       </p>
+        </div>
       <div className="ProfileBox grid justify-items-center">
         <div className="w-60 h-44  mt-16 sm:w-64 sm:h-52 sm:mt-24 rounded-3xl z-0 bg-white-rgba"></div>
         <img className="w-52 h-38 mt-[-265px] sm:w-max sm:h-max z-10 sm:mt-[-309px]" src={imagen} alt="Imagen" />
@@ -22,7 +23,7 @@ const Profile = ({ onItemClick }) => {
         <h1 className="font-bold text-lg sm:text-xl xl:text-2xl text-orange ">
           Full Stack Developer
         </h1>
-        <h2 className="font-bold text-base sm:text-lg xl:text-xl text-white">Frontend</h2>
+        <h2 className={`font-bold text-base sm:text-lg xl:text-xl ${darkMode ? 'text-white' : 'text-veryDark'}`}>Frontend</h2>
         <div className="containerIcons w-56 h-10 sm:w-72 sm:h-14 my-8 flex justify-between ">
           <a
             href="https://www.linkedin.com/in/andersonduran-full-stack-developer/"
@@ -65,6 +66,7 @@ const Profile = ({ onItemClick }) => {
 
 Profile.propTypes = {
   onItemClick: PropTypes.func.isRequired,
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export default Profile;

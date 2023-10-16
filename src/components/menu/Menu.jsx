@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 import { AiFillHome } from "react-icons/ai";
 import { FaFileCode, FaBriefcase, FaMobile } from "react-icons/fa";
 import { PiCertificateFill } from "react-icons/pi";
+import { MdLightMode, MdNightlight } from "react-icons/md";
 import "../../App.css";
 import cv from "../../assets/pdf/CV_Anderson_Dura.pdf";
 
-const Menu = ({ onItemClick, activeSection }) => {
+const Menu = ({ onItemClick, activeSection, darkMode, toggleTheme }) => {
   const [isMenuHidden, setIsMenuHidden] = useState(false);
   const [activeIcon, setActiveIcon] = useState(null);
 
@@ -37,7 +38,7 @@ const Menu = ({ onItemClick, activeSection }) => {
     { id: "home", icon: <AiFillHome className="text-2xl md:text-4xl" /> },
     { id: "skills", icon: <FaFileCode className="text-2xl md:text-4xl" /> },
     { id: "projects", icon: <FaBriefcase className="text-2xl md:text-4xl" /> },
-    { id: "qualities", icon: <PiCertificateFill className="text-2xl md:text-4xl" />,},
+    { id: "qualities", icon: <PiCertificateFill className="text-2xl md:text-4xl" /> },
     { id: "contact", icon: <FaMobile className="text-2xl md:text-4xl" /> },
   ];
 
@@ -48,7 +49,9 @@ const Menu = ({ onItemClick, activeSection }) => {
 
   return (
     <div
-      className={`rounded-3xl border-2 text-grey bg-veryDark flex xl:flex-col mx-auto lg:ml-auto lg:mr-auto ${
+      className={`rounded-3xl border-2 text-grey ${
+        darkMode ? "bg-veryDark" : "bg-white"
+      } flex xl:flex-col mx-auto lg:ml-auto lg:mr-auto ${
         isMenuHidden ? "hidden" : ""
       }`}
     >
@@ -57,7 +60,7 @@ const Menu = ({ onItemClick, activeSection }) => {
           key={item.id}
           className={`menu-item ${
             activeSection === item.id ? "active" : ""
-          } w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 grid place-items-center hover:scale-150 duration-300 ${
+          } w-11 h-11 sm:w-16 sm:h-16 md:w-20 md:h-20 grid place-items-center hover:scale-150 duration-300 ${
             activeIcon === item.id ? "text-orange scale-150 duration-300" : ""
           }`}
           onClick={() => handleIconClick(item.id)}
@@ -76,12 +79,23 @@ const Menu = ({ onItemClick, activeSection }) => {
           </div>
         </div>
       ))}
+      <button
+        className={`w-11 h-11 sm:w-16 sm:h-16 md:w-20 md:h-20 font-bold text-2xl md:text-3xl grid place-items-center cursor-pointer hover:scale-125 duration-300 ${
+          activeIcon === "theme" ? "text-orange scale-125 duration-300" : ""
+        } ${darkMode ? 'text-grey' : ' text-grey'}`}
+        onClick={() => {
+          setActiveIcon("theme");
+          toggleTheme();
+        }}
+      >
+        {darkMode ? <MdLightMode  className="text-2xl md:text-4xl" /> : <MdNightlight className="text-2xl md:text-4xl" />}
+      </button>
       <a
         href={cv}
         download="CV-Anderson-Duran.pdf"
-        className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 font-bold text-2xl md:text-3xl grid place-items-center cursor-pointer hover:scale-125 duration-300 ${
+        className={`mr-2 sm:mr-0 w-11 h-11 sm:w-16 sm:h-16 md:w-20 md:h-20 font-bold text-2xl md:text-3xl grid place-items-center cursor-pointer hover:scale-125 duration-300 ${
           activeIcon === "cv" ? "text-orange scale-125 duration-300" : ""
-        }`}
+        } ${darkMode ? 'text-grey' : ' text-grey'}`}
         onClick={() => {
           setActiveIcon("cv");
         }}
@@ -95,6 +109,10 @@ const Menu = ({ onItemClick, activeSection }) => {
 Menu.propTypes = {
   onItemClick: PropTypes.func.isRequired,
   activeSection: PropTypes.string.isRequired,
+  darkMode: PropTypes.bool.isRequired,
+  toggleTheme: PropTypes.func.isRequired,
 };
 
 export default Menu;
+
+

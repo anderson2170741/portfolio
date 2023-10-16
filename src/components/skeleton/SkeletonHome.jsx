@@ -39,7 +39,12 @@ const SkeletonHome = () => {
           className={`p-3 sm:p-10 xl:p-8 rounded-3xl text-center ${
             isLoading ? "animate-pulse bg-white-rgba text-transparent" : ""
           }`}
-        ></div>
+        ><p className={`font-extrabold text-3xl sm:text-4xl xl:text-5xl `}>
+        +380
+      </p>
+      <h2 className="font-extrabold text-base sm:text-lg xl:text-xl mt-4">
+        Horas de práctica
+      </h2></div>
         <div
           className={`p-3 sm:p-10 xl:p-8 rounded-3xl text-center ${
             isLoading ? "animate-pulse bg-white-rgba text-transparent" : ""

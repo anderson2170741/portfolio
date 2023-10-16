@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import { React, useRef, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+import { BiCaretLeft, BiCaretRight } from "react-icons/bi";
+import PropTypes from "prop-types";
 import { FaGithub, FaProjectDiagram } from "react-icons/fa";
 import { FiFigma } from "react-icons/fi";
 import { SiPostman } from "react-icons/si";
@@ -13,12 +14,38 @@ import PhraseCard from "../../../assets/image/carouselImages/phrase-card.png";
 import PokemonRandom from "../../../assets/image/carouselImages/pokemon-random.png";
 import WeatherApp from "../../../assets/image/carouselImages/weather.png";
 
-const ProjectCarousel = () => {
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
+const ProjectCarousel = ({ darkMode }) => {
+  const sliderRef = useRef(); 
+  const [activeArrow, setActiveArrow] = useState(null);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
+  const previousSlide = () => {
+    console.log("Anterior");
+    sliderRef.current.slickPrev();
+  };
+
+  const nextSlide = () => {
+    console.log("Siguiente");
+    sliderRef.current.slickNext();
+  };
+
   return (
-    <div className="w-full">
-      <Carousel infiniteLoop showThumbs={false} showIndicators={false}>
+    <div className="w-full relative">
+      <Slider ref={sliderRef} {...settings}>
         {/* Todo API  */}
-        <div className="">
+        <div className=" ">
           <h2 className="pb-4 font-bold text-xl sm:text-2xl xl:text-3xl text-orange text-center">
             Todo API
           </h2>
@@ -28,12 +55,16 @@ const ProjectCarousel = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-60 h-60 sm:w-80 sm:h-80  hover:skew-y-12  mx-auto md:mx-0 ">
-                <img className="rounded-2xl" src={TodoAPI} alt="todo api" />
+              <div className="w-60 h-60 sm:w-80 sm:h-80  hover:skew-y-12  mx-auto md:mx-0">
+                <img className="rounded-2xl shadow-2xl" src={TodoAPI} alt="todo api" />
               </div>
             </a>
 
-            <div className="md:ml-8 text-left text-white font-bold">
+            <div
+              className={`md:ml-8 px-7 md:px-0 text-left ${
+                darkMode ? "text-white" : "text-veryDark"
+              } font-bold`}
+            >
               <p className="mb-4 text-base sm:text-lg xl:text-xl">
                 API para una aplicación de todo list, con su usuarios y su
                 tareas, en donde cada tarea tiene su categoría.
@@ -93,14 +124,16 @@ const ProjectCarousel = () => {
             >
               <div className="w-60 h-60 sm:w-80 sm:h-80  hover:skew-y-12  mx-auto md:mx-0 ">
                 <img
-                  className="rounded-2xl"
+                  className="rounded-2xl shadow-2xl"
                   src={RickandMorty}
                   alt="rick and morty"
                 />
               </div>
             </a>
 
-            <div className="md:ml-8 px-7 sm:px-0 text-left text-white font-bold">
+            <div className={`md:ml-8 px-7 md:px-0 text-left ${
+                darkMode ? "text-white" : "text-veryDark"
+              } font-bold`}>
               <p className="mb-4 text-base sm:text-lg xl:text-xl">
                 App Web que ofrece información sobre los personajes, episodios,
                 ubicaciones y más elementos del universo de Rick and Morty.
@@ -151,11 +184,13 @@ const ProjectCarousel = () => {
               rel="noopener noreferrer"
             >
               <div className="w-60 h-60 sm:w-80 sm:h-80  hover:skew-y-12  mx-auto md:mx-0 ">
-                <img className="rounded-2xl" src={pokedex} alt="pokedex" />
+                <img className="rounded-2xl shadow-2xl" src={pokedex} alt="pokedex" />
               </div>
             </a>
 
-            <div className="md:ml-8 text-left text-white font-bold">
+            <div className={`md:ml-8 px-7 md:px-0 text-left ${
+                darkMode ? "text-white" : "text-veryDark"
+              } font-bold`}>
               <p className="mb-4 text-base sm:text-lg xl:text-xl">
                 Una App Web que proporciona información detallada sobre los
                 Pokémon tales como como sus características, tipos y más.
@@ -207,14 +242,16 @@ const ProjectCarousel = () => {
             >
               <div className="w-60 h-60 sm:w-80 sm:h-80  hover:skew-y-12  mx-auto md:mx-0 ">
                 <img
-                  className="rounded-2xl"
+                  className="rounded-2xl shadow-2xl"
                   src={PhraseCard}
                   alt="phrase-card"
                 />
               </div>
             </a>
 
-            <div className="md:ml-8 text-left text-white font-bold">
+            <div className={`md:ml-8 px-7 md:px-0 text-left ${
+                darkMode ? "text-white" : "text-veryDark"
+              } font-bold`}>
               <p className="mb-4 text-base sm:text-lg xl:text-xl">
                 App que cambia de frases de manera aleatoria con tan solo hacer
                 clic en el botón.
@@ -255,14 +292,16 @@ const ProjectCarousel = () => {
             >
               <div className="w-60 h-60 sm:w-80 sm:h-80  hover:skew-y-12  mx-auto md:mx-0">
                 <img
-                  className="rounded-2xl"
+                  className="rounded-2xl shadow-2xl"
                   src={PokemonRandom}
                   alt="pokemon"
                 />
               </div>
             </a>
 
-            <div className="md:ml-8 text-left text-white font-bold">
+            <div className={`md:ml-8 px-7 md:px-0 text-left ${
+                darkMode ? "text-white" : "text-veryDark"
+              } font-bold`}>
               <p className="mb-4 text-base sm:text-lg xl:text-xl">
                 App que muestra algunas características de un Pokémon de manera
                 aleatoria con tan solo dar click en cambiar Pokémon y otras
@@ -303,11 +342,13 @@ const ProjectCarousel = () => {
               rel="noopener noreferrer"
             >
               <div className="w-60 h-60 sm:w-80 sm:h-80  hover:skew-y-12  mx-auto md:mx-0">
-                <img className="rounded-2xl" src={ecommerce} alt="e-commerce" />
+                <img className="rounded-2xl shadow-2xl" src={ecommerce} alt="e-commerce" />
               </div>
             </a>
 
-            <div className="md:ml-8 text-left text-white font-bold">
+            <div className={`md:ml-8 px-7 md:px-0 text-left ${
+                darkMode ? "text-white" : "text-veryDark"
+              } font-bold`}>
               <p className="mb-4 text-base sm:text-lg xl:text-xl">
                 App Web de comercio en línea que consiste en la compra y venta
                 de productos a través del internet.
@@ -348,14 +389,16 @@ const ProjectCarousel = () => {
             >
               <div className="w-60 h-60 sm:w-80 sm:h-80  hover:skew-y-12  mx-auto md:mx-0">
                 <img
-                  className="rounded-2xl"
+                  className="rounded-2xl shadow-2xl"
                   src={WeatherApp}
                   alt="weather-app"
                 />
               </div>
             </a>
 
-            <div className="md:ml-8 text-left text-white font-bold">
+            <div className={`md:ml-8 px-7 md:px-0 text-left ${
+                darkMode ? "text-white" : "text-veryDark"
+              } font-bold`}>
               <p className="mb-4 text-base sm:text-lg xl:text-xl">
                 Aplicación web para obtener información meteorológica precisa y
                 actualizada en una ubicación en tiempo real.
@@ -383,9 +426,32 @@ const ProjectCarousel = () => {
             </div>
           </div>
         </div>
-      </Carousel>
+      </Slider>
+      <BiCaretLeft
+        className={`slider-button text-3xl sm:text-4xl  text-grey hover:text-orange cursor-pointer absolute left-0 top-1/2 transform -translate-y-1/2 ${
+          activeArrow === "left" ? "scale-125 duration-300 text-orange" : ""
+        }`}
+        onClick={() => {
+          setActiveArrow("left");
+          previousSlide();
+        }}
+      />
+      <BiCaretRight
+        className={`slider-button text-3xl sm:text-4xl  text-grey hover:text-orange cursor-pointer absolute right-0 top-1/2 transform -translate-y-1/2 ${
+          activeArrow === "right" ? "scale-125 duration-300 text-orange" : ""
+        }`}
+        onClick={() => {
+          setActiveArrow("right");
+          nextSlide();
+        }}
+      />
+
+
     </div>
   );
+};
+ProjectCarousel.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export default ProjectCarousel;

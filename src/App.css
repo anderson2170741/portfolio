@@ -15,3 +15,14 @@
   white-space: nowrap;
   animation: typing 4s steps(40, end) infinite;
 }
+
+
+/* Cambiar el color de los puntos de navegación inactivos a gris */
+.slick-slider .slick-dots li button::before {
+  color: #ABABAB;
+}
+
+/* Cambiar el color del punto de navegación activo */
+.slick-slider .slick-dots li.slick-active button::before {
+  color: #FF570A !important;
+}

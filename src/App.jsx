@@ -14,9 +14,14 @@ import Home from "./components/content/Home";
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("home");
+  const [darkMode, setDarkMode] = useState(true); // Establecer el tema oscuro como predeterminado
 
   const handleItemClick = (item) => {
     setActiveSection(item);
+  };
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
   };
 
   useEffect(() => {
@@ -26,13 +31,17 @@ const App = () => {
   }, []);
 
   return (
-    <div className="containerBackground min-h-screen bg-veryDark flex justify-center items-center">
+    <div
+      className={`containerBackground min-h-screen flex justify-center items-center ${
+        darkMode ? "bg-veryDark" : "bg-white"
+      }`}
+    >
       <div className="container mx-auto flex justify-between flex-wrap">
         <div className="columProfile w-full sm:max-w-sm sm:mx-auto lg:ml-auto lg:mr-auto">
           {isLoading ? (
             <SkeletonProfile onItemClick={handleItemClick} />
           ) : (
-            <Profile onItemClick={handleItemClick} />
+            <Profile onItemClick={handleItemClick} darkMode={darkMode} />
           )}
         </div>
         <div className="columnDescription w-full md:max-w-3xl sm:mx-auto lg:ml-auto lg:mr-auto pb-40 sm:pb-40 md:pb-40 lg:pb-40 xl:pb-0">
@@ -41,36 +50,44 @@ const App = () => {
               {isLoading ? (
                 <SkeletonHome />
               ) : (
-                <Home onItemClick={handleItemClick} /> 
+                <Home onItemClick={handleItemClick} darkMode={darkMode} />
               )}
             </div>
           )}
           {activeSection === "skills" && (
             <div>
-              <Skills />
+              <Skills darkMode={darkMode} />
             </div>
           )}
           {activeSection === "projects" && (
             <div>
-              <Projects />
+              <Projects darkMode={darkMode} />
             </div>
           )}
           {activeSection === "qualities" && (
             <div>
-              <Qualities />
+              <Qualities darkMode={darkMode} />
             </div>
           )}
           {activeSection === "contact" && (
             <div>
-              <Contact />
+              <Contact darkMode={darkMode} />
             </div>
           )}
         </div>
         <div className="columnNavbar grid content-center fixed inset-x-0 bottom-5 xl:relative lg:px-24 xl:px-0">
           {isLoading ? (
-            <SkeletonMenu onItemClick={handleItemClick} activeSection={activeSection} />
+            <SkeletonMenu
+              onItemClick={handleItemClick}
+              activeSection={activeSection}
+            />
           ) : (
-            <Menu onItemClick={handleItemClick} activeSection={activeSection} />
+            <Menu
+              onItemClick={handleItemClick}
+              activeSection={activeSection}
+              darkMode={darkMode}
+              toggleTheme={toggleTheme}
+            />
           )}
         </div>
       </div>
@@ -79,5 +96,3 @@ const App = () => {
 };
 
 export default App;
-
-
