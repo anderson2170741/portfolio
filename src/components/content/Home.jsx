@@ -1,18 +1,42 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../App.css";
 import PropTypes from "prop-types";
 
 const Home = ({ onItemClick, darkMode }) => {
+  const [displayText, setDisplayText] = useState("");
+  const [index, setIndex] = useState(0);
+  const animatedText = "¡Hola!, Soy Anderson Durán";
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDisplayText(animatedText.substring(0, index));
+      setIndex(index + 1);
+
+      if (index >= animatedText.length) {
+        setTimeout(() => {
+          setDisplayText("");
+          setIndex(0);
+        }, 3000);
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [index, animatedText]);
+
   const handleProjectsClick = () => {
     onItemClick("projects");
   };
 
   return (
     <div className={`pt-12 sm:pt-16 px-2 sm:px-8 ${darkMode ? 'bg-veryDark' : 'bg-white'}`}>
-      <div className="w-auto">
-        <h1 className={`typing-text font-bold text-3xl sm:text-4xl xl:text-5xl ${darkMode ? 'text-white' : 'text-veryDark'}`}>
-          ¡Hola!, Soy <span className={`text-orange`}>Anderson Durán</span>  
+      <div className="" style={{ overflow: "hidden", height: "auto" }}>
+        <h1 className={`font-bold text-3xl sm:text-4xl xl:text-5xl ${darkMode ? 'text-white' : 'text-veryDark'}`}>
+          <span>{displayText.substring(0, 11)}</span> 
+          <span className="text-orange">{displayText.substring(11, 26)}</span> 
+          <span>|</span>
         </h1>
       </div>
       <p className={`my-8 sm:my-16 font-bold text-base sm:text-lg xl:text-xl ${darkMode ? 'text-white' : 'text-veryDark'} leading-7 sm:leading-9`}>

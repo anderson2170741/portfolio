@@ -428,7 +428,7 @@ const ProjectCarousel = ({ darkMode }) => {
         </div>
       </Slider>
       <BiCaretLeft
-        className={`slider-button text-3xl sm:text-4xl  text-grey hover:text-orange cursor-pointer absolute left-0 top-1/2 transform -translate-y-1/2 ${
+        className={`slider-button text-3xl sm:text-4xl  text-grey hover:text-orange hover:scale-125 duration-300 cursor-pointer absolute left-0 top-1/2 transform -translate-y-1/2 ${
           activeArrow === "left" ? "scale-125 duration-300 text-orange" : ""
         }`}
         onClick={() => {
@@ -437,7 +437,7 @@ const ProjectCarousel = ({ darkMode }) => {
         }}
       />
       <BiCaretRight
-        className={`slider-button text-3xl sm:text-4xl  text-grey hover:text-orange cursor-pointer absolute right-0 top-1/2 transform -translate-y-1/2 ${
+        className={`slider-button text-3xl sm:text-4xl  text-grey hover:text-orange hover:scale-125 duration-300 cursor-pointer absolute right-0 top-1/2 transform -translate-y-1/2 ${
           activeArrow === "right" ? "scale-125 duration-300 text-orange" : ""
         }`}
         onClick={() => {
