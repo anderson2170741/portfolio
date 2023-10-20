@@ -6,7 +6,7 @@ import { FaFileCode, FaBriefcase, FaMobile } from "react-icons/fa";
 import { PiCertificateFill } from "react-icons/pi";
 import { MdLightMode, MdNightlight } from "react-icons/md";
 import "../../App.css";
-import cv from "../../assets/pdf/CV_Anderson_Dura1.pdf";
+import cv from "../../assets/pdf/CV_AndersonDuran_4.pdf";
 
 const Menu = ({ onItemClick, activeSection, darkMode, toggleTheme }) => {
   const [isMenuHidden, setIsMenuHidden] = useState(false);
@@ -17,8 +17,9 @@ const Menu = ({ onItemClick, activeSection, darkMode, toggleTheme }) => {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const isSmallScreen = window.innerWidth <= 1024;
 
-      if (currentScrollY > prevScrollY) {
+      if (currentScrollY > prevScrollY && isSmallScreen) {
         setIsMenuHidden(true);
       } else {
         setIsMenuHidden(false);

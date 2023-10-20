@@ -36,15 +36,15 @@ const App = () => {
         darkMode ? "bg-veryDark" : "bg-white"
       }`}
     >
-      <div className="container mx-auto flex justify-between flex-wrap">
-        <div className="columProfile w-full sm:max-w-sm sm:mx-auto lg:ml-auto lg:mr-auto">
+      <div className="container mx-auto lg:mx-4 flex justify-between flex-wrap">
+        <div className="columProfile w-full sm:max-w-sm sm:mx-auto xl:mx-0">
           {isLoading ? (
             <SkeletonProfile onItemClick={handleItemClick} />
           ) : (
             <Profile onItemClick={handleItemClick} darkMode={darkMode} />
           )}
         </div>
-        <div className="columnDescription w-full md:max-w-3xl sm:mx-auto lg:ml-auto lg:mr-auto pb-40 sm:pb-40 md:pb-40 lg:pb-40 xl:pb-0">
+        <div className="columnDescription w-full md:max-w-3xl sm:mx-auto pb-40 sm:pb-40 md:pb-40 lg:pb-40 xl:pb-0">
           {activeSection === "home" && (
             <div>
               {isLoading ? (
