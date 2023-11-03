@@ -39,12 +39,8 @@ const Home = ({ onItemClick, darkMode }) => {
           <span>|</span>
         </h1>
       </div>
-      <p className={`my-8 sm:my-16 font-bold text-base sm:text-lg xl:text-xl ${darkMode ? 'text-white' : 'text-veryDark'} leading-7 sm:leading-9`}>
-        Desarrollador web Full Stack con amplio conocimiento en JavaScript,
-        HTML, CSS, React, Node.js, SQL, PostgreSQL, Sequelize, Figma, Postman,
-        Tailwind, Bootstrap, Git, etc. Dispuesto al cambio y de camino hacia la
-        grandeza, por eso sigo ampliando mis conocimientos en Python y
-        algoritmos.
+      <p className={`my-8 sm:my-16 font-bold text-base sm:text-lg xl:text-xl ${darkMode ? 'text-white' : 'text-veryDark'} leading-7 sm:leading-8 lg:leading-9 xl:leading-9`}>
+        Desarrollador web Full Stack con un amplio conocimiento en una variedad de tecnologías clave. Mi experiencia abarca desde el desarrollo front-end con HTML, CSS, React y herramientas como Tailwind CSS y Bootstrap, hasta el desarrollo back-end con JavaScript, Node.js, y bases de datos SQL como MySQL y PostgreSQL, utilizando Sequelize y Express.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
         <div className={`p-3 sm:p-10 xl:p-8 rounded-3xl bg-orange shadow-lg shadow-orange/50 text-center hover:cursor-pointer hover:scale-110 duration-300 ${darkMode ? 'text-white' : 'text-veryDark'}`}>
