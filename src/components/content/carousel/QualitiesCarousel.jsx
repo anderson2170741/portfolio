@@ -46,7 +46,7 @@ const QualitiesCarousel = ({ darkMode }) => {
               Five Star
             </h3>
             <h4 className="pl-3 text-base sm:text-lg xl:text-xl text-orange">
-              Desarrollador de calzados
+            Diseño, patrones y desarrollo digital de calzado
             </h4>
             <p className="text-grey">2019-2023</p>
             <ul className="list-disc list-inside">
@@ -63,7 +63,7 @@ const QualitiesCarousel = ({ darkMode }) => {
             <h3 className={`pb-2 text-lg sm:text-xl xl:text-2xl font-bold ${
                 darkMode ? "text-white" : "text-veryDark"
               }`}>
-              Minimarket Luis
+              Bodega Luis
             </h3>
             <h4 className="pl-3 text-base sm:text-lg xl:text-xl text-orange">
               Vendedor
