@@ -6,7 +6,7 @@ import { FaFileCode, FaBriefcase, FaMobile } from "react-icons/fa";
 import { PiCertificateFill } from "react-icons/pi";
 import { MdLightMode, MdNightlight } from "react-icons/md";
 import "../../App.css";
-import cv from "../../assets/pdf/CV_Anderson_Duran_5.pdf";
+import cv from "../../assets/pdf/CV_Anderson_Duran_6.pdf";
 
 const Menu = ({ onItemClick, activeSection, darkMode, toggleTheme }) => {
   const [isMenuHidden, setIsMenuHidden] = useState(false);
